@@ -1,0 +1,16 @@
+nav {
+  width: 100vw;
+  height: 80px;
+  padding: 0px 40px;
+
+  background-color: gainsboro;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .logout {
+    a {
+      text-decoration: none;
+    }
+  }
+}
