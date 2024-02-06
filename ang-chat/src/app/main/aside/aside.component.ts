@@ -1,6 +1,6 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { GroupDTO } from '../dto/group.dto';
-import { WebService } from '../service/web.service';
+import { GroupDTO } from '../../dto/group.dto';
+import { WebService } from '../../service/web.service';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -23,13 +23,18 @@ export class AsideComponent implements OnInit {
 
   @Output() redirect: EventEmitter<any> = new EventEmitter();
 
+  // load groups based on user
+
+  // add users to group
+
   chat: any;
 
   emmitChat() {
     this.redirect.emit(this.chat);
   }
 
-  renderChat(groupname: string, name: string) {
+  renderChat(groupname: string) {
+    let name = localStorage.getItem('name');
     console.log(groupname, name);
     this.web.getMessagesByGroup(groupname).subscribe((data) => {
       this.chat = data;
@@ -37,13 +42,13 @@ export class AsideComponent implements OnInit {
     });
   }
 
-  rollDownMenu($event: MouseEvent, name: string) {
+  rollDownMenu($event: MouseEvent) {
     let currentDiv = <HTMLElement>$event.currentTarget;
     let parentDiv = (<HTMLElement>currentDiv).parentElement;
     let usersDiv = (<HTMLElement>parentDiv).lastChild;
     (usersDiv as HTMLElement).style.display =
       (usersDiv as HTMLElement).style.display == 'block' ? 'none' : 'block';
 
-    this.renderChat(currentDiv.innerText, name);
+    this.renderChat(currentDiv.innerText);
   }
 }

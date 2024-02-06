@@ -31,10 +31,20 @@ export class UserService {
     return group;
   }
 
-  async FindUser(){
-    //find user thru login 
+  async FindUser(name: string) {
+    let validUser = await this.userRepository.find({
+      where: {
+        name: name,
+      },
+    });
+    console.log(validUser);
+
+    if (validUser.length > 0) {
+      return { validUser, valid: true };
+    } else {
+      return { valid: false };
+    }
   }
-  
 
   async add(
     name: string,
@@ -52,6 +62,12 @@ export class UserService {
       }
     });
 
+    let validUser = await this.userRepository.find({
+      where: {
+        name: name,
+      },
+    });
+    //implement soonly one user can have a name
     if (valid) {
       let newUser = new User();
       newUser.group = validGroup;

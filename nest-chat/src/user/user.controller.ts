@@ -2,6 +2,11 @@ import { Body, Controller, Get, Post } from '@nestjs/common';
 import { UserService } from './user.service';
 import { User } from 'src/db/user.entity';
 
+interface FindUserI {
+  validUser?: User[];
+  valid: boolean;
+}
+
 @Controller('user')
 export class UserController {
   constructor(private readonly userService: UserService) {}
@@ -17,5 +22,9 @@ export class UserController {
   @Post('/findByGroup')
   findByGroup(@Body() { groupname }: any): Promise<User[] | undefined> {
     return this.userService.findByGroup(groupname);
+  }
+  @Post('/findUser')
+  findUser(@Body() { name }: any): Promise<FindUserI> {
+    return this.userService.FindUser(name);
   }
 }

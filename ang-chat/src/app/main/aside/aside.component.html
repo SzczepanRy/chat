@@ -1,7 +1,7 @@
 <aside>
   <div *ngFor="let group of groups" class="chats">
     <div class="chat">
-      <div class="title" (click)="rollDownMenu($event, 'imie')">
+      <div class="title" (click)="rollDownMenu($event)">
         {{ group.name }}
       </div>
       <div class="users">

@@ -9,3 +9,8 @@ export interface UserDTO {
   lastname: string;
   group?: GroupI;
 }
+
+export interface FindUserDTO {
+  validUser: UserDTO[];
+  valid: boolean;
+}

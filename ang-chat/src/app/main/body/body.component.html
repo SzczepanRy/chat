@@ -1,0 +1,19 @@
+<body>
+  <div class="chat">
+    <div
+      [style.flex-direction]="name == message?.name ? 'row' : 'row-reverse'"
+      class="message"
+      *ngFor="let message of data.message"
+    >
+      <p>
+        {{ message?.content }}
+      </p>
+      <b id="{{ message?.id }}">{{ message?.name }}</b>
+      <!-- <i> {{ message?.date }}</i> -->
+    </div>
+  </div>
+  <div class="toolbar">
+    <input type="text" class="input" />
+    <button class="send">send</button>
+  </div>
+</body>

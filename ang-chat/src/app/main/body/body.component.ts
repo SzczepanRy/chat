@@ -10,4 +10,7 @@ import { Component, Input } from '@angular/core';
 })
 export class BodyComponent {
   @Input() data: any;
+
+  name = localStorage.getItem('name');
+  current: boolean = false;
 }
