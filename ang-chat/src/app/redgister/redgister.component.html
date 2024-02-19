@@ -1,0 +1,10 @@
+<div class="redgister">
+  <div class="redgisterForm">
+    <input type="text" class="name" placeholder="name" />
+    <input type="text" class="lastname" placeholder="lastname" />
+    <select class="group">
+      <option *ngFor="let group of groups">{{ group.name }}</option>
+    </select>
+    <button (click)="addUser()">redgister</button>
+  </div>
+</div>

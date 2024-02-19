@@ -3,7 +3,9 @@ import { Group } from 'src/db/group.entity';
 import { Message } from 'src/db/message.entity';
 import { User } from 'src/db/user.entity';
 import { Repository } from 'typeorm';
-
+interface resI {
+  message: string;
+}
 @Injectable()
 export class MessageService {
   constructor(
@@ -41,7 +43,7 @@ export class MessageService {
     }
   }
 
-  async add(content: string, name: string, groupname: string): Promise<string> {
+  async add(content: string, name: string, groupname: string): Promise<resI> {
     let user = await this.userRepository.find({
       where: {
         name: name,
@@ -67,9 +69,9 @@ export class MessageService {
       newMessage.date = Date.now();
 
       await this.messageRepository.save(newMessage);
-      return 'message added';
+      return { message: 'message added' };
     } else {
-      return 'name not found';
+      return { message: 'name not found' };
     }
   }
 }

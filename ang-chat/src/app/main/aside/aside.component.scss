@@ -6,6 +6,58 @@ aside {
   justify-content: flex-start;
   flex-direction: column;
   overflow-y: scroll;
+  font-size: 20px;
+  font-weight: 800;
+  .enterGroup {
+    width: 100%;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid gainsboro;
+    color: gray;
+    background-color: white;
+    &:hover {
+      background-color: gray;
+      color: white;
+    }
+  }
+  .dialog {
+    position: absolute;
+    width: 200px;
+    min-height: 100px;
+    left: calc(50vw - 100px);
+    top: calc(50vw - 50px);
+    background-color: gainsboro;
+    border-radius: 20px;
+    display: none;
+
+    .items {
+      width: 200px;
+      min-height: 100px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 20px;
+      color: gray;
+      .addGroup {
+        all: unset;
+
+        padding: 10px;
+        border-radius: 5px;
+        color: gainsboro;
+        background-color: gray;
+        &:hover {
+          background-color: gainsboro;
+          color: black;
+          border: 2px solid black;
+          padding: 8px;
+        }
+      }
+    }
+  }
+
   .chats {
     width: 100%;
     display: flex;

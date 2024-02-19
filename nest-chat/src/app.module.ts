@@ -10,6 +10,7 @@ import { UserController } from './user/user.controller';
 import { UserModule } from './user/user.module';
 import { MessageService } from './message/message.service';
 import { MessageModule } from './message/message.module';
+import { GatewayModule } from './gateway/gateway.module';
 
 @Module({
   imports: [
@@ -20,6 +21,8 @@ import { MessageModule } from './message/message.module';
     UserModule,
 
     MessageModule,
+
+    GatewayModule,
   ],
   controllers: [AppController],
   providers: [AppService],

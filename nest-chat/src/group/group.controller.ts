@@ -14,4 +14,8 @@ export class GroupController {
   add(@Body() { name }: any): Promise<string> {
     return this.groupServeice.add(name);
   }
+  @Post('/findGroupsByUser')
+  findGroupsByUser(@Body() { name }: any) {
+    return this.groupServeice.findGroupsByUser(name);
+  }
 }

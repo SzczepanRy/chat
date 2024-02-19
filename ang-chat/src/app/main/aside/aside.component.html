@@ -1,4 +1,15 @@
 <aside>
+  <div (click)="enableDialog()" class="enterGroup">enter group</div>
+  <div class="dialog">
+    <div class="items">
+      <select class="choseGroup">
+        <option class="groupSelect" *ngFor="let dialogGroup of dialogGroups">
+          {{ dialogGroup.name }}
+        </option>
+      </select>
+      <button (click)="addToGroup()" class="addGroup">submit</button>
+    </div>
+  </div>
   <div *ngFor="let group of groups" class="chats">
     <div class="chat">
       <div class="title" (click)="rollDownMenu($event)">

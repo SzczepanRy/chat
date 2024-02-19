@@ -3,6 +3,10 @@ import { Group } from 'src/db/group.entity';
 import { User } from 'src/db/user.entity';
 import { Repository } from 'typeorm';
 
+interface resI {
+  message: string;
+}
+
 @Injectable()
 export class UserService {
   constructor(
@@ -46,11 +50,7 @@ export class UserService {
     }
   }
 
-  async add(
-    name: string,
-    lastname: string,
-    groupname: string,
-  ): Promise<string> {
+  async add(name: string, lastname: string, groupname: string): Promise<resI> {
     let groupsArr = await this.groupRepository.find();
 
     let valid = false;
@@ -74,9 +74,11 @@ export class UserService {
       newUser.name = name;
       newUser.lastname = lastname;
       await this.userRepository.save(newUser);
-      return 'user added';
+      console.log('added');
+
+      return { message: 'user added' };
     } else {
-      return 'not a valid classname';
+      return { message: 'not a valid classname' };
     }
   }
 }

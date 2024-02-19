@@ -15,5 +15,6 @@ import { groupProviders } from 'src/db/group.providers';
     MessageService,
   ],
   controllers: [MessageController],
+  exports: [MessageService],
 })
 export class MessageModule {}

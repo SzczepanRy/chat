@@ -7,6 +7,7 @@ import { MainComponent } from './main.component';
 import { APP_CONFIG, APP_SERVICE_CONF } from '../appConfig/appconfig.serve';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [MainComponent],
@@ -17,6 +18,7 @@ import { BrowserModule } from '@angular/platform-browser';
     BodyComponent,
     HttpClientModule,
     BrowserModule,
+    FormsModule,
   ],
   providers: [
     {

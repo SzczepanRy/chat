@@ -6,6 +6,9 @@ interface FindUserI {
   validUser?: User[];
   valid: boolean;
 }
+interface resI {
+  message: string;
+}
 
 @Controller('user')
 export class UserController {
@@ -16,7 +19,7 @@ export class UserController {
     return this.userService.findAll();
   }
   @Post('/add')
-  add(@Body() { name, lastname, groupname }: any): Promise<string> {
+  add(@Body() { name, lastname, groupname }: any): Promise<resI> {
     return this.userService.add(name, lastname, groupname);
   }
   @Post('/findByGroup')

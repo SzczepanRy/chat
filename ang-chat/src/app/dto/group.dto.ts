@@ -10,14 +10,25 @@ interface MessageI {
   date: number;
 }
 
+// export interface GroupDTO {
+//   id: number;
+//   name: string;
+//   // users: usersI;
+//   users: any;
+// }
 export interface GroupDTO {
   id: number;
   name: string;
-  // users: usersI;
-  users: any;
+  users: usersI[];
 }
 export interface MessagesByGroupI {
   id: number;
   name: string;
   message?: MessageI[];
+}
+
+export interface findGroupByUserDto {
+  id: number;
+  name: string;
+  users: usersI[];
 }

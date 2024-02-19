@@ -12,6 +12,8 @@ import { MainComponent } from './main/main.component';
 import { MainModule } from './main/main.module';
 import { LoginComponent } from './login/login.component';
 import { LoginModule } from './login/login.module';
+import { RedgisterComponent } from './redgister/redgister.component';
+import { RedgisterModule } from './redgister/redgister.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -21,6 +23,7 @@ import { LoginModule } from './login/login.module';
     AppRoutingModule,
     MainModule,
     LoginModule,
+    RedgisterModule,
     // NavComponent,
     // AsideComponent,
     // BodyComponent,

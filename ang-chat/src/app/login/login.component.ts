@@ -10,6 +10,10 @@ import { Router } from '@angular/router';
 export class LoginComponent {
   constructor(private router: Router, private web: WebService) {}
 
+  redgister() {
+    this.router.navigate(['redgister']);
+  }
+
   findUser($event: MouseEvent) {
     let currentDiv = <HTMLElement>$event.currentTarget;
     let parentDiv = (<HTMLElement>currentDiv).parentElement;
@@ -22,6 +26,7 @@ export class LoginComponent {
         console.log(validUser[0].name);
 
         localStorage.setItem('name', validUser[0].name);
+        localStorage.setItem('lastname', validUser[0].lastname);
         this.router.navigate(['main']);
       }
     });

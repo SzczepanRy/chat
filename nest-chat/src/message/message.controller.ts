@@ -3,6 +3,10 @@ import { MessageService } from './message.service';
 import { Message } from 'src/db/message.entity';
 import { Group } from 'src/db/group.entity';
 
+interface resI {
+  message: string;
+}
+
 @Controller('message')
 export class MessageController {
   constructor(private readonly messageServeice: MessageService) {}
@@ -12,7 +16,7 @@ export class MessageController {
     return this.messageServeice.findAll();
   }
   @Post('/add')
-  add(@Body() { content, name, groupname }: any): Promise<string> {
+  add(@Body() { content, name, groupname }: any): Promise<resI> {
     return this.messageServeice.add(content, name, groupname);
   }
   @Post('/find')

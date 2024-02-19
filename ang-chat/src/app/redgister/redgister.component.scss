@@ -1,0 +1,39 @@
+.redgister {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .redgisterForm {
+    width: 300px;
+    height: 300px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+    background-color: gray;
+    input {
+      all: unset;
+
+      background-color: gainsboro;
+      color: gray;
+      padding: 10px;
+      border-radius: 5px;
+    }
+    button {
+      all: unset;
+      background-color: gainsboro;
+      color: gray;
+      padding: 10px;
+      border-radius: 5px;
+      &:hover {
+        color: gainsboro;
+        background-color: gray;
+        border: 2px solid gainsboro;
+        padding: 8px;
+      }
+    }
+  }
+}
