@@ -69,31 +69,6 @@ export class BodyComponent implements OnInit, AfterViewInit {
     } catch (err) {}
   };
 
-  // chatEl!: HTMLElement | null;
-
-  // scroll() {
-  //   console.log('SCROLLLL');
-
-  //   this.chatEl = document.querySelector('.chat');
-  //   console.log(this.chatEl);
-
-  //   let lastMessageEL = (this.chatEl as HTMLElement).lastElementChild
-  //     ?.previousElementSibling;
-  //   console.log(lastMessageEL);
-
-  //   if (lastMessageEL) {
-  //     console.log('all');
-  //     // (this.chatEl as HTMLElement).scrollTop =
-  //     //   (this.chatEl as HTMLElement).scrollHeight -
-  //     //   (this.chatEl as HTMLElement).clientHeight;
-  //     // (this.chatEl as HTMLElement).scrollTop = (
-  //     //   this.chatEl as HTMLElement
-  //     // ).scrollHeight;
-  //     // (this.chatEl as HTMLElement).scrollTo(0, lastMessageEL.scrollHeight);
-  //     (lastMessageEL as HTMLElement).scrollIntoView();
-  //   }
-  // }
-
   sendMessage($event: MouseEvent) {
     let buttonEl = <HTMLElement>$event.currentTarget;
     let parentDiv = (<HTMLElement>buttonEl).parentElement;
